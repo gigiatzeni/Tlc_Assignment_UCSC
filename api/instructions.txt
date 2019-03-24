@@ -1,0 +1,20 @@
+API Web Service setup
+
+1) Install docker on your machine
+https://www.docker.com/get-started
+
+2) Set your wd on the /api folder
+
+3) Build the docker image (Only the first time - It may take a while!)
+docker build --rm --force-rm -t api:v1 .
+
+4) Run the container on port 5000
+docker run -d -p 5000:5000 api
+
+DONE!
+
+Visit http://127.0.0.1:5000/ for info about api
+
+Example of request
+
+http://127.0.0.1:5000/api/v1/predict?gender=0&SeniorCitizen=0&Partner=1&Dependents=0&tenure=1&PhoneService=1&PaperlessBilling=0&MonthlyCharges=76.2&TotalCharges=76.2&MultipleLines_No=1&MultipleLines_NoPhoneService=0&MultipleLines_Yes=0&InternetService_Dsl=0&InternetService_FiberOptic=1&InternetService_No=0&OnlineSecurity_No=1&OnlineSecurity_NoInternetService=0&OnlineSecurity_Yes=0&OnlineBackup_No=1&OnlineBackup_NoInternetService=0&OnlineBackup_Yes=0&DeviceProtection_No=0&DeviceProtection_NoInternetService=0&DeviceProtection_Yes=1&TechSupport_No=1&TechSupport_NoInternetService=0&TechSupport_Yes=0&StreamingTV_No=1&StreamingTV_NoInternetService=0&StreamingTV_Yes=0&StreamingMovies_No=1&StreamingMovies_NoInternetService=0&StreamingMovies_Yes=0&Contract_Month-to-month=1&Contract_OneYear=0&Contract_TwoYear=0&PaymentMethod_BankTransfer(automatic)=0&PaymentMethod_CreditCard(automatic)=0&PaymentMethod_ElectronicCheck=1&PaymentMethod_MailedCheck=0
