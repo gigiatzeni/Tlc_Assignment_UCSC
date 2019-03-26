@@ -24,12 +24,12 @@ Try the request</a> </br>
 def api_id():
     X_test=pd.DataFrame.from_dict(request.args, orient='index').transpose()
     
-    with open('rf_model.pkl', 'rb') as f:
-        rf = pkl.load(f)
+    with open('lr_model.pkl', 'rb') as f:
+        lr = pkl.load(f)
 
-    rf_preds = rf.predict(X_test)
-    rf_probs = [y for (x, y) in rf.predict_proba(X_test)]
-    ret = {"prob": rf_probs[0]}
+    lr_preds = lr.predict(X_test)
+    lr_probs = [y for (x, y) in lr.predict_proba(X_test)]
+    ret = {"prob": lr_probs[0]}
     return jsonify(ret)
 
 app.run(host='0.0.0.0')
