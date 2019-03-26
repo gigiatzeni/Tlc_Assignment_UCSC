@@ -3,13 +3,13 @@ API Web Service setup
 1) Install docker on your machine
 https://www.docker.com/get-started
 
-2) Set your wd on the /api folder
+2) Set your wd on the api subfolder of the project
 
 3) Build the docker image (Only the first time - It may take a while!)
 docker build --rm --force-rm -t api:v1 .
 
 4) Run the container on port 5000
-docker run -d -p 5000:5000 api
+docker run -d -p 5000:5000 api:v1
 
 DONE!
 
